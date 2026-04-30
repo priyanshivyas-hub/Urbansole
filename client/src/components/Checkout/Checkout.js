@@ -96,7 +96,7 @@ function Checkout() {
 
     const fetchCart = async () => {
       const response = await fetch(
-        `http://localhost:9000/users/${currentUser._id}/cart`
+        `https://urbansole-mu74.onrender.com/users/${currentUser._id}/cart`
       );
       const data = await response.json();
       setCartItems(data.cart.items);
@@ -104,7 +104,7 @@ function Checkout() {
 
     const fetchUser = async () => {
       const response = await fetch(
-        `http://localhost:9000/users/${currentUser._id}`
+        `https://urbansole-mu74.onrender.com/users/${currentUser._id}`
       );
       const data = await response.json();
       setUser(data.document);
@@ -133,7 +133,7 @@ function Checkout() {
         });
       }
 
-      fetch(`http://localhost:9000/users/${user._id}`, {
+      fetch(`https://urbansole-mu74.onrender.com/users/${user._id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -165,7 +165,7 @@ function Checkout() {
           });
         });
     } else {
-      fetch(`http://localhost:9000/users/${user._id}`, {
+      fetch(`https://urbansole-mu74.onrender.com/users/${user._id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -204,7 +204,7 @@ function Checkout() {
       tax,
     }));
 
-    fetch("http://localhost:9000/create-checkout-session", {
+    fetch("https://urbansole-mu74.onrender.com/create-checkout-session", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -231,7 +231,7 @@ function Checkout() {
 
   const makeOrder = async (order) => {
     const response = await fetch(
-      `http://localhost:9000/users/${order.user}/orders`,
+      `https://urbansole-mu74.onrender.com/users/${order.user}/orders`,
       {
         method: "POST",
         headers: {
@@ -242,7 +242,7 @@ function Checkout() {
     ).then((response) => response.json());
     console.log(response);
 
-    await fetch(`http://localhost:9000/users/${order.user}/cart`, {
+    await fetch(`https://urbansole-mu74.onrender.com/users/${order.user}/cart`, {
       method: "DELETE",
     }).then((response) => response.json());
   };
