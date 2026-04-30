@@ -11,7 +11,7 @@ function ProductList({ gender }) {
   const [showFilter, setShowFilter] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const link = "https://urbansole-mu74.onrender.com/products/";
+  const link = "http://localhost:9000/products/";
 
   useEffect(() => {
     fetchProducts();
