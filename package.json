@@ -1,0 +1,41 @@
+{
+  "name": "urbansole",
+  "version": "1.0.0",
+  "description": "UrbanSole - India's Premium Sneaker Destination",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./server/server.js",
+    "start:prod": "node",
+    "create": "node ./client/create.js",
+    "delete": "node ./client/delete.js"
+  },
+  "keywords": [],
+  "author": "Your Name",
+  "license": "ISC",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "axios": "^1.6.7",
+    "bcryptjs": "^2.4.3",
+    "braces": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1",
+    "jsonwebtoken": "^9.0.2",
+    "jwt-decode": "^4.0.0",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.23.1",
+    "morgan": "^1.10.0",
+    "react-router-dom": "^6.22.3",
+    "stripe": "^15.7.0",
+    "validator": "^13.11.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "concurrently": "^9.2.1",
+    "nodemon": "^3.1.0",
+    "react": "^18.2.0",
+    "tailwindcss": "^3.4.1"
+  }
+}
