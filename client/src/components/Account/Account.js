@@ -87,7 +87,7 @@ const Account = () => {
 
   const [user, setUser] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:9000/users/${userId}`)
+    fetch(``${process.env.REACT_APP_API_URL || "http://localhost:9000"}`/users/${userId}`)
       .then((res) => res.json())
       .then((data) => {
         setUser(data.document);

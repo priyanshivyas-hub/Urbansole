@@ -21,7 +21,7 @@ function Orders() {
   }, []);
 
   const { data, loading, error } = useFetch(
-    userId ? `http://localhost:9000/users/${userId}/orders` : null
+    userId ? ``${process.env.REACT_APP_API_URL || "http://localhost:9000"}`/users/${userId}/orders` : null
   );
 
   useEffect(() => {

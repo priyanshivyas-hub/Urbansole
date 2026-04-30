@@ -35,7 +35,7 @@ function LoginForm({ setTokenAndUser }) {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    const loginLink = "http://localhost:9000/users/login";
+    const loginLink = "`${process.env.REACT_APP_API_URL || "http://localhost:9000"}`/users/login";
 
     fetch(loginLink, {
       method: "POST",

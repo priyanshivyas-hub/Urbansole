@@ -69,7 +69,7 @@ function Cart() {
   const user = JSON.parse(localStorage.getItem("currentUser"));
   let link;
   if (user) {
-    link = `http://localhost:9000/users/${user._id}/cart`;
+    link = ``${process.env.REACT_APP_API_URL || "http://localhost:9000"}`/users/${user._id}/cart`;
   }
 
   // get cart items from server
@@ -165,7 +165,7 @@ function Cart() {
       tax,
     }));
 
-    fetch("http://localhost:9000/create-checkout-session", {
+    fetch("`${process.env.REACT_APP_API_URL || "http://localhost:9000"}`/create-checkout-session", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -197,7 +197,7 @@ function Cart() {
     try {
       // Place order
       const orderResponse = await fetch(
-        `http://localhost:9000/users/${order.user}/orders`,
+        ``${process.env.REACT_APP_API_URL || "http://localhost:9000"}`/users/${order.user}/orders`,
         {
           method: "POST",
           headers: {
@@ -216,7 +216,7 @@ function Cart() {
 
       // Clear cart
       const cartResponse = await fetch(
-        `http://localhost:9000/users/${order.user}/cart`,
+        ``${process.env.REACT_APP_API_URL || "http://localhost:9000"}`/users/${order.user}/cart`,
         {
           method: "DELETE",
         }

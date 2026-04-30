@@ -15,7 +15,7 @@ function Signup({ setTokenAndUser }) {
   const handleSignup = (e) => {
     e.preventDefault();
 
-    const signupLink = "http://localhost:9000/users/signup";
+    const signupLink = "`${process.env.REACT_APP_API_URL || "http://localhost:9000"}`/users/signup";
 
     fetch(signupLink, {
       method: "POST",
