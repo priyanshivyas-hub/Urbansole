@@ -36,10 +36,10 @@
 
 //   fs.writeFileSync(
 //     componentFileJS,
-//     `import React from 'react';\n\nfunction ${component}() {\n    return (\n        <div>\n            {/* ${component} component */}\n        </div>\n    );\n}\n\nexport default ${component};\n`
+//     `import React from 'react';`${process.env.REACT_APP_API_URL || "http://localhost:9000"}n`${process.env.REACT_APP_API_URL || "http://localhost:9000"}nfunction ${component}() {`${process.env.REACT_APP_API_URL || "http://localhost:9000"}n    return (`${process.env.REACT_APP_API_URL || "http://localhost:9000"}n        <div>`${process.env.REACT_APP_API_URL || "http://localhost:9000"}n            {/* ${component} component */}`${process.env.REACT_APP_API_URL || "http://localhost:9000"}n        </div>`${process.env.REACT_APP_API_URL || "http://localhost:9000"}n    );`${process.env.REACT_APP_API_URL || "http://localhost:9000"}n}`${process.env.REACT_APP_API_URL || "http://localhost:9000"}n`${process.env.REACT_APP_API_URL || "http://localhost:9000"}nexport default ${component};`${process.env.REACT_APP_API_URL || "http://localhost:9000"}n`
 //   );
 
-//   fs.writeFileSync(componentFileCSS, `/* ${component} component styles */\n`);
+//   fs.writeFileSync(componentFileCSS, `/* ${component} component styles */`${process.env.REACT_APP_API_URL || "http://localhost:9000"}n`);
 // });
 
 // console.log("Component structure created successfully!");
@@ -63,10 +63,10 @@ function createComponent(componentNames) {
 
     fs.writeFileSync(
       componentFileJS,
-      `import React from 'react'; \n\n import ${cssVariableName} from './${component}.module.css';\n\n \n\nfunction ${component}() {\n    return (\n        <div>\n            {/* ${component} component */}\n        </div>\n    );\n}\n\nexport default ${component};\n`
+      `import React from 'react'; `${process.env.REACT_APP_API_URL || "http://localhost:9000"}n`${process.env.REACT_APP_API_URL || "http://localhost:9000"}n import ${cssVariableName} from './${component}.module.css';`${process.env.REACT_APP_API_URL || "http://localhost:9000"}n`${process.env.REACT_APP_API_URL || "http://localhost:9000"}n `${process.env.REACT_APP_API_URL || "http://localhost:9000"}n`${process.env.REACT_APP_API_URL || "http://localhost:9000"}nfunction ${component}() {`${process.env.REACT_APP_API_URL || "http://localhost:9000"}n    return (`${process.env.REACT_APP_API_URL || "http://localhost:9000"}n        <div>`${process.env.REACT_APP_API_URL || "http://localhost:9000"}n            {/* ${component} component */}`${process.env.REACT_APP_API_URL || "http://localhost:9000"}n        </div>`${process.env.REACT_APP_API_URL || "http://localhost:9000"}n    );`${process.env.REACT_APP_API_URL || "http://localhost:9000"}n}`${process.env.REACT_APP_API_URL || "http://localhost:9000"}n`${process.env.REACT_APP_API_URL || "http://localhost:9000"}nexport default ${component};`${process.env.REACT_APP_API_URL || "http://localhost:9000"}n`
     );
 
-    fs.writeFileSync(componentFileCSS, `/* ${component} component styles */\n`);
+    fs.writeFileSync(componentFileCSS, `/* ${component} component styles */`${process.env.REACT_APP_API_URL || "http://localhost:9000"}n`);
 
     // add the component to the index.js file in the components directory which will be used to import all components from the components directory if they aren't already there
 
@@ -83,7 +83,7 @@ function createComponent(componentNames) {
     ) {
       fs.appendFileSync(
         indexFile,
-        `export { default as ${component} } from "./${component}/${component}.js";\n`
+        `export { default as ${component} } from "./${component}/${component}.js";`${process.env.REACT_APP_API_URL || "http://localhost:9000"}n`
       );
     }
   });

@@ -21,7 +21,7 @@ function Orders() {
   }, []);
 
   const { data, loading, error } = useFetch(
-    userId ? ``${process.env.REACT_APP_API_URL || "http://localhost:9000"}`/users/${userId}/orders` : null
+    userId ? `http://localhost:9000/users/${userId}/orders` : null
   );
 
   useEffect(() => {
@@ -85,7 +85,7 @@ function Orders() {
                       {item.product_id.title}
                     </p>
                     <p className={styles.orderItemPrice}>
-                      Price: ${item.price}
+                      Price: ₹{item.price}
                     </p>
                     <p className={styles.orderItemQuantity}>{item.quantity}</p>
                   </div>
@@ -94,7 +94,7 @@ function Orders() {
             </div>
             <div className={styles.orderFooter}>
               <p className={styles.orderTotal}>
-                Total: <span>${order.total_amount}</span>
+                Total: <span>₹{order.total_amount}</span>
               </p>
             </div>
           </div>

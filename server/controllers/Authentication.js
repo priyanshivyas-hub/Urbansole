@@ -7,7 +7,7 @@ const dotenv = require("dotenv");
 const { promisify } = require("util");
 // const { stringify } = require("braces");
 
-dotenv.config({ path: `${__dirname}/../config.env` });
+dotenv.config({ path: `${__dirname}/../../.env` });
 
 const signUp = async (req, res, next) => {
   try {
@@ -101,11 +101,10 @@ const limit = (role) => (req, res, next) => {
   next();
 };
 const createToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRES_IN,
+  return jwt.sign({ id }, "my_simple_secret_key", {
+    expiresIn: "90d",
   });
 };
-
 const sendToken = (user, statusCode, res) => {
   const token = createToken(user._id);
 

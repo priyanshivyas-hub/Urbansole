@@ -25,7 +25,7 @@ const AddedToCart = ({ product, size, color, quantity }) => {
         <img src={product.images[0]} alt={product.title} />
         <div className={styles.productDetails}>
           <p className={styles.productTitle}>{product.title}</p>
-          <p>${product.price}</p>
+          <p>₹{product.price}</p>
           <p>Size {size}</p>
           <p>Quantity {quantity}x</p>
         </div>
@@ -63,7 +63,7 @@ function ProductDetail() {
 
   // get user
   let getUser = async () => {
-    const response = await fetch(``${process.env.REACT_APP_API_URL || "http://localhost:9000"}`/users/${userId}`);
+    const response = await fetch(`http://localhost:9000/users/${userId}`);
     const data = await response.json();
     setUser(data.document);
     setFavorites(data.document.favorites);
@@ -75,14 +75,14 @@ function ProductDetail() {
 
   let link;
   if (user) {
-    link = ``${process.env.REACT_APP_API_URL || "http://localhost:9000"}`/users/${user._id}/cart`;
+    link = `http://localhost:9000/users/${user._id}/cart`;
   }
 
   let productSlug = window.location.pathname.split("/")[2];
 
   useEffect(() => {
     if (!product) {
-      const serverLink = ``${process.env.REACT_APP_API_URL || "http://localhost:9000"}`/products/slug/${productSlug}`;
+      const serverLink = `http://localhost:9000/products/slug/${productSlug}`;
       // Fetch product from server
       fetch(serverLink)
         .then((res) => res.json())
@@ -102,7 +102,7 @@ function ProductDetail() {
 
   // handle favorite
   const handleFavorite = () => {
-    const link = ``${process.env.REACT_APP_API_URL || "http://localhost:9000"}`/users/${userId}/favorites/${product._id}`;
+    const link = `http://localhost:9000/users/${userId}/favorites/${product._id}`;
 
     if (!user) {
       window.location.href = "/login";
@@ -250,7 +250,7 @@ function ProductDetail() {
             <div className={styles.info}>
               <p>{product.subTitle}</p>
               <h2 className={styles.productDetailTitle}>{product.title}</h2>
-              <p>${product.price}</p>
+              <p>₹{product.price}</p>
 
               <img
                 src={currentImage}

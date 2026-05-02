@@ -19,7 +19,7 @@ function UserInfo({ user }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const link = "`${process.env.REACT_APP_API_URL || "http://localhost:9000"}`/users/";
+    const link = "http://localhost:9000/users/";
 
     fetch(link + user._id, {
       method: "PATCH",

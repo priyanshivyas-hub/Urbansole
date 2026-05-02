@@ -13,7 +13,7 @@ function Home() {
   const [topProducts, setTopProducts] = useState([]);
   const [products, setProducts] = useState([]);
   // get top products for hero slideshow
-  const link = "`${process.env.REACT_APP_API_URL || "http://localhost:9000"}`/products/top/3";
+  const link = "http://localhost:9000/products/top/3";
 
   useEffect(() => {
     function fetchData() {
@@ -21,7 +21,7 @@ function Home() {
         .then((response) => response.json())
         .then((data) => setTopProducts(data.documents));
 
-      fetch("`${process.env.REACT_APP_API_URL || "http://localhost:9000"}`/products")
+      fetch("http://localhost:9000/products")
         .then((response) => response.json())
         .then((data) => setProducts(data.documents));
     }

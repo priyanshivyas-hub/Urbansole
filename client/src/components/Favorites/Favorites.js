@@ -9,7 +9,7 @@ function Favorites() {
   // get user favorites
   const user = JSON.parse(localStorage.getItem("currentUser"));
 
-  const link = ``${process.env.REACT_APP_API_URL || "http://localhost:9000"}`/users/${user._id}`;
+  const link = `http://localhost:9000/users/${user._id}`;
 
   useEffect(() => {
     const getFavorites = async () => {

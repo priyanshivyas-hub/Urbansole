@@ -1,5 +1,10 @@
 node_modules/
-
+client/node_modules/
 .DS_Store
-
 config.env
+.env
+client/build/
+logs/
+*.log
+.vscode/
+Thumbs.db
